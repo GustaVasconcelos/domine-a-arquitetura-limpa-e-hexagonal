@@ -1,11 +1,13 @@
 import TerminalUtil from "@/app/util/terminalUtil"
 import polimorfismo from "../fundamentos/polimorfismo";
+import dip from "../fundamentos/dip";
 
 const menuFundamentos = async () => {
     TerminalUtil.titulo('Fundamentos');
     
     const [indice] = await TerminalUtil.menu([
         '1. Polimorfismo',
+        '2. DIP',
         'Voltar'
     ]);
 
@@ -14,7 +16,10 @@ const menuFundamentos = async () => {
             await polimorfismo();
             break
         case 1: 
-            return;
+            await dip();
+            break
+        default:
+            return
     }
 
     await menuFundamentos();
